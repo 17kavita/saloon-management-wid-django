@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+ {% load static %}
+
+{% block title %}About {% endblock title %}
+{% block body %}
+
+
+
+<marquee height="50px" bgcolor="maroon"style="font-family:'Monotype Corsiva;
+font-size:25px;color:white;font-weight:bold;margin-top:1%">
+<h2 style="font-family: 'Monotype Corsiva;color:red; font-weight:bold;margin-top:2%">
+        User Login Form</h2><hr>
+</marquee>
+<hr>
+<form class="container mt-5" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label ><br>User Name:<br></label>
+    <input type="text" class="form-control" placeholder="Enter UserName" name="uname">
+  </div>
+  <div class="form-group">
+    <label ><br>Password:<br></label>
+    <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+    </div>
+   <div class="form-group">
+   <button type="submit" class="btn btn-primary" style="margin-top:2%;height:40px;font-size:15px">SUBMIT</button>
+   <a href="{% url 'user_signup'%}" class="btn btn-primary" style="margin-top:2%;height:40px;font-size:15px">CREATE AN ACCOUNT</a>
+   </div>
+
+</form>
+{% endblock body%}

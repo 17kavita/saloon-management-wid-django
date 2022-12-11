@@ -1,0 +1,93 @@
+{% include 'base.html'%}
+ {% load static %}
+ {% block body %}
+<script>
+    function checkpass()
+    {
+    if(document.signup.pwd.value!=document.signup.cpwd.value)
+    {
+    alert('password and repeat password field does not match');
+    document.signup.cpwd.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+
+<marquee height="50px" bgcolor="maroon"style="font-family:'Monotype Corsiva;
+font-size:25px;color:white;font-weight:bold;margin-top:1%">
+<h2 style="font-family: 'Monotype Corsiva;color:red; font-weight:bold;margin-top:2%">
+        User Signup Form</h2><hr>
+</marquee>
+<hr>
+<form class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+      <div class="row">
+        <div class="col">
+          <label><br>First Name<br></label>
+          <input type="text" class="form-control" name="fname" placeholder="First name" required>
+        </div>
+        <div class="col">
+          <label><br>Last Name<br></label>
+          <input type="text" class="form-control" name="lname" placeholder="Last name"required>
+        </div>
+      </div>
+       <div class="row">
+         <div class="form-group col-md-12">
+          <label><br>Contact<br></label>
+          <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number ">
+        </div>
+
+      </div>
+       <div class="row">
+        <div class="col">
+          <label><br>Email ID<br></label>
+          <input type="text" class="form-control" name="email" placeholder="Enter Email ID " required>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+          <label><br>Password<br></label>
+          <input type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+        </div>
+        <div class="col">
+          <label><br>confirm password<br></label>
+          <input type="password" class="form-control" name="cpwd" placeholder="Enter Password Again" required>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="form-group col-md-6">
+          <label><br>Gender<br></label>
+            <div style="border:1px solid lightgrey;padding:5px;border-radius:6px">
+           <div class="custom-control custom-radio custom-control-inline">
+               <input type="radio" id="customRadioInline1" name="gender" class="custom-control-input" value="Male">
+                <label class="custom-control-label" for="customRadioInline1">Male</label>
+           </div>
+
+             <div class="custom-control custom-radio custom-control-inline">
+               <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female">
+                <label class="custom-control-label" for="customRadioInline2">Female</label>
+           </div>
+      </div>
+        </div>
+        <div class="col">
+          <label><br>Image<br></label>
+          <input type="file" class="form-control" name="image"style="border:1px solid lightgrey;padding:5px;
+          border-radius:6px"><br>
+        </div>
+      </div>
+     <br><input type="submit" value="submit" class="btn btn-primary"style="width:200px ;height:50px">
+
+
+</form>
+{% endblock%}
+
+
+
+
+<!---->

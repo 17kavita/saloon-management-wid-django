@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+ {% load static %}
+
+{% block title %}About {% endblock title %}
+{% block body %}
+
+<marquee height="50px" bgcolor="maroon"style="font-family:'Monotype Corsiva;
+font-size:25px;color:white;font-weight:bold;margin-top:1%">
+<h2 style="font-family: 'Monotype Corsiva;color:red; font-weight:bold;margin-top:2%">
+        Admin Signup Form</h2><hr>
+</marquee>
+<hr>
+
+
+<form class="container mt-5" action="/admin_signup" method="post" >
+    {% csrf_token %}
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label><br>UserName<br></label>
+          <input type="text" class="form-control" name="uname" placeholder="Enter User name" required>
+
+
+      </div>
+       <div class="row">
+        <div class="col">
+          <label><br>Email ID<br></label>
+          <input type="text" class="form-control" name="email" placeholder="Enter Email ID " required>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+          <label><br>Password<br></label>
+          <input type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+        </div>
+        <div class="col">
+          <label><br>confirm password<br></label>
+          <input type="password" class="form-control" name="cpwd" placeholder="Enter Password Again" required>
+        </div>
+      </div>
+            </div>
+
+</div>
+    <button type="submit" class="btn btn-primary" style="margin-top:2%;">SUBMIT</button>
+
+</form>
+
+{% endblock body%}

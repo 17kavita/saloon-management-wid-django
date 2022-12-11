@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+ {% load static %}
+
+{% block title %}About {% endblock title %}
+{% block body %}
+
+<div class="container-fluid px=0 mb-3">
+  <img src="{% static 'image/con.jpg'%}" alt="New York" class="d-block w-100 mx=0" style="width:100%;height:500px;">
+  </div>
+
+<div class="container mb-4 py-4">
+    <h1 class="text-center"style="font-size:50px;font-family:'Monotype Corsiva';font-bold;">Contant us</h1>
+  <form method="post"action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name" >Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name"><br>
+      </div>
+    <div class="form-group">
+      <label for="email" >Email address</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="Enter your Email"><br>
+      </div>
+      <div class="form-group">
+      <label for="phone" >Phone</label>
+      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone no."><br>
+      </div>
+      <div class="form-group">
+      <label for="desc" class="form-label">Message</label>
+      <textarea class="form-control" id="desc" rows="3" name="desc"></textarea><br>
+</div>
+    <button class="btn btn-primary"type="submit">Submit</button>
+</form>
+</div>
+{% endblock body %}
